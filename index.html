@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial scale=1.0">
+    <title>GGE 3423 - Introduction to GIS Project</title>
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+    
+<body>
+    <section class="header">
+        
+         <div class="text-box">
+            <h1>Spatial Analysis of Traffic Accidents in Hillsborough County - Florida</h1>
+            <p>by Gemmie Wesley Motuba MaEnow</p>
+            
+        </div>
+        
+        <nav>
+            <div class="nav-links">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#data collection">Data Collection</a></li>
+                <li><a href="#data preparation">Data Preparation </a></li>
+                <li><a href="#data analysis">Data Analysis/Processing</a></li>
+                <li><a href="#results">Results</a></li>
+            </ul>
+        
+            </div>
+        </nav>
+        
+    </section>
+    
+    
+    
+    <!----------Introduction Section----------->
+    <section class="introduction" id="introduction">
+        <h1>Introduction</h1>
+        <h2>Road Accidents</h2>
+        <p>Roads are necessary in our everyday lives, and we all use them in various ways (walking, driving or walking) to meet our daily needs. Unfortunately, these routes which serve us come with risk, and involves people losing their lives and being injured on a daily basis.</p>
+        <p>Road traffic accidents are serious problems that results in physical, emotional and financial loss and damage. According to the WHO 2013 Global Road Safety report, road accidents are among the ten leading causes of death worldwide(WHO, 2013), every second someone dies on the road <a href="https://wwww.who.int/violence_injury_prevention/road_safety/2018/">(WHO Global status report on road safety 2018)</a>. For example, 95 percent of transportation deaths in the U.S. happen on streets, roads and highways, and in 2020 the U.S. recorded approximately 38,000 people killed by road accidents <a href="https://www.nhtsa.gov/press-releases/2020-fatality-data-show-increased-traffic-fatalities-during-pandemic/">(U.S. NHTSA, 2021)</a>. Due to the enormous impacts of road accidents, it is relevant to make big efforts to reduce their occurrence.</p>
+        <h2>Relevance of Road Accident Research</h2>
+        <p>Research in road accidents has contributed to progress made in addressing the road accident crisis around the world. For example; the <a href="https://wwww.lasvegasnaveda.gov/News/Blog/Detail/citywide-crash-mitigation-program/">Las Vegas Crash mitigation program </a> which first involved evaluating road crashes to make data driven decisions on road intersections suitable for safety improvements. This project showcases how road accident analysis are important in having safer roads.</p>
+        
+        
+        <h2>Project Problem and Aim </h2>
+        <p>Several measures are implemented to reduce road traffic accidents, but before all this it is relevant to explore data related to road accidents, so as to know where accidents are likely to happen and to keep commuters safer. Hillsborough County in Florida is one of the deadlist counties for commuters in the United States according to <a href="https://www.thezebra.com/resources/driving/most-dangerous-roads-in-the-us/">the zebra's</a> report on most dangerous roads in the United States. In the 2021 traffic carsh report from Florida Highway Safety and Motor Vehicles <a href="https://www.thezebra.com/resources/driving/most-dangerous-roads-in-the-us/"><I>(FLHSMV)</I></a>, Hillsborough recorded a number of 271 fatalities from traffic crashes. Furthermore, the number of crash (road accidents) incidents within September-December 2021 increased from 870 to 886. Such crash statistics about this county raises the question of; <span class="bold">what areas have high road traffic accident incidents?</span> 
+        <p>To answer this question <span class="bold">the aim</span> which is; <span class="bold">to identify areas with high clusters of road traffic accidents (road accident hotspots) in Hillsborough County by using historical road accident (crash) data</span> was established. This project applies hotspot dectection to find these high traffic accident areas. Hotspots identification is an important aspect in controlling road accidents because it enables effective traffic management at the hotspots. These hotspots are areas with a high rate of road traffic accidents.</p>
+        
+        <p>ArcMap software is used from the data preparation phase througth to the result interpretation to explore the available datasets so as to achieve the aim of this project.</p>
+        
+       <h2>Study Area</h2>
+       <p>This project focuses on <a href="https://www.hillsboroughcounty.org/">Hillsborough County</a> in Florida (USA). This county was selected due to it having the second highest fatality road crashes in Florida, after Miami-Dade county. <a href="https://www.thezebra.com/resources/driving/most-dangerous-roads-in-the-us/">(The Zebra, 2020)</a>. Hillsborough County is the heart of Tampa Bay and located in the West central portion of the U.S. state of Florida <a href="https://www.visittampabay.com/listings/hillsborough-county/4636/#tab-social/">(Visit Tampa Bay, 2022)</a>. This county is located at 27° 54′ 36″ N, 82° 21′ 0″ W.</p>
+        
+        <div class="container">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1lq4_0R3O7TBHKj4uaSiCTtWX9Bgv_Fbp&ehbc=2E312Fzoom=100" width="640" height="480"></iframe><figure><figcaption>Map shows study area in red square - Hillsborough County, Florida (U.S.A).<br><i>(Zoom into map to get a clear view)</i></figcaption></figure>
+        </div>
+        
+       
+        <h2>Tentative Project Plan</h2>
+        <p>Achieving the aim of this project involves several phases and most of the task will be carried out in ArcMap and ArcGIS Online;</p>
+        
+        <ol class="indent">
+        <li><span class="bold">Week 2 : Data Collection</span> - all datasets will be identified and collected.</li>
+        <li><span class="bold">Week 3 : Data Preparation/Documentation</span> - data to be used will be processed and documented ready for analysis.</li> 
+        <li><span class="bold">Week 4 : Analysis</span> - analysis workflow will be applied.</li>
+        <li>Finally <span class="bold">Week 4 : Results Visualisation and Interpretation</span> - the output from the analysis will be shared and published in various formats and ArcGIS online.</li></ol>
+    </section>
+         <!----------End Introduction Section----------->
+    
+    
+    <!----------Data Collection Section----------->
+    <section class="data collection" id="data collection">
+        <h1>Data Collection</h1>
+        <p>Data required for this project was collected from various resources. <i><span class="bold">Figure 1</span></i> illustrates the data collection proceedure applied in this project and <i><span class="bold">table 1</span></i> shows a brief outline of data used. 
+        </p>
+        
+        <figure>
+        <img src="images/Data Collection proceedure.png" alt="Data Collection Proceedure" style="width:100%">
+            <figcaption><strong><i>Figure 1</i></strong> : Data Collection Proceedure used in this project.</figcaption>
+        </figure>
+        
+        <h2>Datasets for the Study</h2>
+        <table>
+            <tr>
+                <th>Datasets</th>
+                <th>Source</th>
+            </tr>
+            
+            <tr>
+                <td>Traffic Road Accidents</td>
+                <td><a href="https://gis.hcso.tampa.fl.us/publicgis/trafficaccidents/">Hillsborough County Sheriff's Office Public GIS</a></td>
+            </tr>
+            
+            <tr>
+                <td>Roads</td>
+                <td><a href="https://gis2017-01-10t133755357z-hillsborough.opendata.arcgis.com/datasets/hillsborough::roads/explore?location=27.911402%2C-82.352574%2C10.65">Hillsborough Open Data</a></td>
+            </tr>
+            
+            <tr>
+            <td>County Boundary</td>
+            <td><a href="https://gis2017-01-10t133755357z-hillsborough.opendata.arcgis.com/datasets/hillsborough::county-boundary/explore?location=27.909458%2C-82.352551%2C10.65">Hillsborough Open Data</a></td>
+            </tr>
+            
+            <tr>
+            <td>Municipality Boundaries</td>
+            <td><a href="https://gis2017-01-10t133755357z-hillsborough.opendata.arcgis.com/datasets/hillsborough::municipality-1/explore?location=27.909241%2C-82.352847%2C10.65">Hillsborough Open Data</a></td>
+            </tr>
+            
+            <tr>
+            <td>Cities in Hillsborough County</td>
+            <td><a href="https://gis2017-01-10t133755357z-hillsborough.opendata.arcgis.com/datasets/hillsborough::cities/explore?location=27.991202%2C-82.352760%2C10.00">Hillsborough Open Data</a></td>
+            </tr>
+            
+            <tr>
+            <td>Zipcode boundaries</td>
+            <td><a href="https://gis2017-01-10t133755357z-hillsborough.opendata.arcgis.com/datasets/hillsborough::zip-codes/explore?location=27.909599%2C-82.352856%2C10.78">Hillsborough Open Data</a></td>
+            </tr>
+             <caption><i><b>Table 1</b> : Datasets with sources used in this study</i></caption>
+        </table>
+        
+       
+        
+        <h2>Data Collection Description</h2>
+        <p>Data of road traffic accidents was collected from the <a href="https://gis.hcso.tampa.fl.us/publicgis/trafficaccidents/">Hillsborough county sheriff's office (HCSO)</a> public GIS website. This data collected was for reported accidents between 2020 and 2021, and available in Excel CSV format. It contained the location (latitude and longitude) of accidents with some attribute data. This data can be read and converted into GIS shapefiles.</p> 
+        <p>Several GIS shapefiles were sourced from <a href="https://gis2017-01-10t133755357z-hillsborough.opendata.arcgis.com/">Hillsborough County GeoHub open data and GIS services</a> which has an ArcGIS Online community. These shapefiles include;</p>
+            <ul class="indent">
+        <li>Roads, bikelanes, zip code boundaries, county boundary, hospitals, municipality boundaries, cities and schools. </li>
+        </ul>
+        
+    </section>
+    <!----------End Data Collection Section----------->
+    
+    
+    <!----------Data Preparation Section------------->
+    <section class="data preparation" id="data preparation">
+    <h1>Data Preparation and Documentation</h1>
+         <h2>Data Documentation</h2>
+        <p>This phase involves describing data collected, to make it easier to understand it's use in this project.</p>
+        
+        <h3>Data Collected Description</h3>
+        
+        <ol class="indent">
+        <li><span class="bold">Traffic Accidents</span> : This dataset contains 3100 traffic accident records that happened between 2020 and 2021, locations, number of accidents at a location, street of accident and rating of accident. This is the main data of interest in order to meet the aim of this project. The data was collected in CSV format. This is the main input data used for this study during the analysis phase.</li>
+        <li><span class="bold">Roads</span> : Data on roads within the county, from streets to major highways. This dataset has 30,719 records. Data was collected as a polyline shapefile.</li> 
+            
+        <li><span class="bold">Bikelanes</span> : Data includes segments of various bikelane paths within the county. It has attribute data such as length of various segments, name of lane and others.</li>
+            
+        <li><span class="bold">County Boundary</span> : Boundary of Hillsborough County, collected in as a shapefile. Has attributes such as, shape_area, shape_perimeter and others. This boundary shapefile will be part of the basemap.</li>
+    
+        <li><span class="bold">Cities in Hillsborough County</span> : Cities located in Hillsborough county makeup this dataset. It has city name, shape_length, shape_area and other attributes.</li>
+        <li><span class="bold">Zipcode Boundaries</span> : This polygon shapefile contains zipcode boundaries of the various zipcodes within Hillsborough, and also zip codes, area zip code belongs to, shape_area and shape_length.</li>
+        </ol>
+        
+        <h2>Data Preparation</h2>
+        <p>Several datasets used in this project where prepared using different techniques to make it suitable for analysis and interpretation of results. Some techniques involved; conversion of data files to a suitable format, changing symbology, transforming coordinate system, removing attribute data (not relevant to the project) and others. All these were accomplished using the ArcMap software.</p> 
+        
+        <h3>Conversion of CSV dataset formats to shapefiles</h3>
+        <p>First step involved converting the <i>"traffic_accidents_new.csv"</i> file to a point shapefile-<i>"traffic_accidents.shp"</i>, which will be aggregated to make it suitable for analysis.</p>
+            <p>After conversion an <a href="https://pro.arcgis.com/en/pro-app/2.8/tool-reference/spatial-statistics/how-optimized-hot-spot-analysis-works.htm"><span class ="bold">Initial Data assessment</span></a> is done to check if the number of incident points is above 60. This is done because results from statistical methods are only reliable if the features are not less than 30. The <i>"traffic_accidents.shp"</i> has more than 60 features or incident points present <i>(See Figure 3)</i>, making it a resource for reliable results for this study.</p>
+        
+      <figure>
+        <img src="images/import&convert_traffic_accident.csv_shp.JPG" alt="Conversion of traffic_accident CSV file" style="width:100%;"/>
+            <figcaption><strong><i>Figure 2</i></strong> : Conversion of <i>"traffic_accidents_new.csv"</i> to shapefile in ArcMap. The point shapefile data of traffic accidents is also the input data for carrying out the analysis.</figcaption>
+        </figure>  
+        
+        <figure>
+        <img src="images/traffic_accident_attributetable.jpg" alt="Traffic Accident attribute table" style="width:90%;"/>
+            <figcaption><strong><i>Figure 3</i></strong> : Shows attribute table of <i>traffic_accidents.shp</i>. The red rectangle below has some numbers depicting that there are more than 60 features in our traffic_accident dataset, making it reliable to be used for this project.</figcaption>
+        </figure> 
+        
+        <p>Other datasets used in this study came in ready-to-use shapefiles (point, polyline and polygon), so did not need alot of processing, but they under went preparations such as; the projection of datasets to the same coordinate system - <i>NAD_1983_StatePlane_Florida_FIPS_0902_Feet</i><i>(See Figure 4)</i>, change of symbology for better visualisation during analysis and result interpretation and editting attribute tables to have only metadata needed for the study.
+        </p>
+        <figure>
+        <img src="images/data_frame_for_project.jpg" alt="Projected Coordinate System for the datasets" style="width:60%;"/>
+            <figcaption><strong><i>Figure 4</i></strong> : The projected coordinate system used for all datasets.</figcaption>
+        </figure> 
+         <figure>
+        <img src="images/dataset_used_for_analysis.jpg" alt="Other Data" style="width:90%;"/>
+            <figcaption><strong><i>Figure 5</i></strong> : Shows some of the data (cities, zip_codes, Hillsbororugh_county) collected for this study, and all are projected in the same coordinate system.</figcaption>
+        </figure> 
+    </section>
+    <!----------End Data Preparation Section------------->
+    
+     <!----------Data Analysis Section------------->
+    <section class="data analysis" id="data analysis">
+        <h1>Data Analysis</h1>
+        <p>This project  focuses on <i>- finding areas with statistically high clusters of traffic accidents in Hillsborough County - </i>, achieving this requires performing a hotspot analysis using <a href = "https://pro.arcgis.com/en/pro-app/2.8/tool-reference/spatial-statistics/optimized-hot-spot-analysis.htm">Optimized Hot Spot Analysis</a>. This analysis is carried out in ArcMap (ArcGIS software). This tool identifies statistically significant spatial clusters of high values and low values and finds patterns in the data . The analysis workflow used for this project had to be shown in a model builder image, unfortunately ArcMaP crashed everytime the mdel was being assembled. The ArcGIS Optimised Hot Spot Analysis tool is the also Hotspot Analysis tool, but the difference is the latter gives options for the user to set there own parameters manually, while for the former parameters are already set automatically based on the input data to produce optimal hot spot analysis results.</p>
+        
+        <h2>Creating a Copy of the Traffic Accidents Data</h2>
+        <p>Now that the analysis method has been identified, the original input data <i>(traffic_accidents.shp)</i> used will undergo some modification and, this renders it impossible to use for other analysis so a copy is made <i>(Figure 7)</i>. When the <i>"Copy Features"</i> tool finishes running, a new "traffic_accident_copy.shp" is added to the map.</p>
+        
+         <figure>
+        <img src="images/copy_features.jpg" alt="Copy Features dialogue box" style="width:100%;"/>
+            <figcaption><strong><i>Figure 7</i></strong> : Copy Features tool dialogue box used to create a copy of traffic accident data.</figcaption>
+        </figure>
+        
+        
+        <h2>Identifying and Processing Attribute Data from Traffic Data for Analysis</h2>
+        <p>After creating the copy, two methods for running analysis had to be used to en ensure the result accuracy. One where an "Analysis Field" was used and the other which involved aggregating the data using "FISHNET POLYGONS" before running the analysis. These two optimised hot spot analysis methods were used to see if the create similar results.</p>
+        <p>To run the first one, attribute data on accident count per location indicated as <i>"Accident_C" - (Figure 8)</i>, was used as the input value for the analysis field. This attribute data was choosen because it gives each point feature (accident location) a value, and with there is no need to "snap" the points together and aggregate them before running the analysis.</p>
+        
+        <figure>
+        <img src="images/info_tool.jpg" alt="Identity dialogue box" style="width:90%;"/>
+            <figcaption><strong><i>Figure 8</i></strong> : Identify dialogue box, which shows various attribute data of a traffic accident, and the <i>"Accident_C"</i> shows the number of accident incidents at that location.</figcaption>
+        </figure>
+        
+        <p>The second one is the aggregation of incident data using the "FISHNET POLYGONS", and this would count the number of accident points within the fishnet grid. </p>
+        
+        <figure>
+        <img src="images/accident_count.jpg" alt="Accident Count Column" style="width:90%;"/>
+            <figcaption><strong><i>Figure 9</i></strong> : <i>"Accident_C"</i> column shows the number of accident incidents at a location. This was used to assign each point a value to carrying out the analysis.</figcaption>
+        </figure>
+        
+         <p>Snapping points simply involves grouping points together under the same coordinate location which are within the x,y tolerance of one another. This can be done using the <a href="https://pro.arcgis.com/en/pro-app/2.8/tool-reference/data-management/integrate.htm">"Integrate" tool</a> in ArcGIS Data Management toolbox. This makes it possible to identify hot zones. This tool would have been used in this study if each accident location represented just one accident incident but since that is not the case it will not be applied.</p>
+        
+         
+        
+         
+        
+        <h2>Running Optimised Hotspot Analysis</h2>
+        <p>At this level after identifying the various input field data, spatial statistical analysis can now be done using the <a href="https://pro.arcgis.com/en/pro-app/2.8/tool-reference/spatial-statistics/hot-spot-analysis.htm">Optimised Hotspot Analysis tool</a>.</p>
+        
+        <p>To run the optimised hot spot analysis, it is selected as such <i><span class ="bold">ArcToolbox > Spatial Statistics > Mapping Clusters</span></i>. Then the various input information for the first analysis were<i>(Input Features and Analysis Field)</i> is inserted into the hotspot analysis dialogue box <i>(Figure 10a)</i> and then runned. In this part of the study, there is no need to aggregate the incident data (traffic accident data points), because they had values based on <i>"Accident_C" which is accident count per location.</i> </p>
+        
+        <p>A second analysis involving incident data aggregation using fishnet polygons aggregation method.</p>
+        
+        <table>
+            <tr>
+                <th>Title Input</th>
+                <th>Input data</th>
+            </tr>
+            
+            <tr>
+                <td>Input Features</td>
+                <td>traffic_accidents_copy</td>
+            </tr>
+            
+            <tr>
+                <td>Analysis Field (optional)</td>
+                <td>Accident_C </td>
+            </tr>
+            
+            <caption><i><b>Table 2</b> : Input for Optimised Hot Spot Analysis</i></caption>
+        </table>
+        
+        <figure>
+        <img src="images/optimised_hot.jpg" alt="Optimised dialogue box" style="width:100%;"/>
+            <figcaption><strong><i>Figure 10a</i></strong> : Optimised Hot Spot Analysis dialogue box with parameters input to run analysis.</figcaption>
+        </figure>
+        
+        <figure>
+        <img src="images/Agg_Optimised.jpg" alt="Aggregate_Optimised_dialogue_box_inputs" style="width:100%;"/>
+            <figcaption><strong><i>Figure 10b</i></strong> : Optimised Hot Spot Analysis dialogue box with Incident Data Aggregation Method used.</figcaption>
+        </figure>
+    
+        
+        <h2>Optimised Hotspot Analysis Output Results</h2>
+        <p>The analysis with "Analysis Field" creates statistically significant clusters of high values (hotspots) and low values (coldspots) and, is represented by a new output point feature class called <a href="https://pro.arcgis.com/en/pro-app/2.8/tool-reference/spatial-statistics/hot-spot-analysis.htm">Traffic_Accident_Optimised_Hotspot</a>. Examining the output attribute table reveals that each feature has a z-score, p-value and confidence level bin (Gi_Bin). Point features with high z-scores indicate that the area is a hot spot and represented by red points <i>(Figure 11a)</i>. These are statistically significant areas with a high confidence level (90% to 99% confidence with Gi_Bin betwen +1 to +3) and, means these zones have high concentration (hotspots) of accident incidents. Identifying these areas is the interest of this study.</p>
+        
+        <p>The other method using fishnet aggregation created a fishnet grid. The red areas are statistically significant hotspots for accident incidents (Figure 11c).</p>
+        <figure>
+        <img src="images/output_analysis.jpg" alt="Gi bin z scores" style="width:100%;"/>
+            <figcaption><strong><i>Figure 11a</i></strong> : Output from running Optimised Hotspot Analysis with Analysis Field input, shows accident hotspots in red points. Hotspot Analysis for accidents between 2020-2021 </figcaption>
+        </figure>
+    
+         <figure>
+        <img src="images/output_attribute_table.jpg" alt="Attribute table for Traffic_Accident _Optimised_Hotspot" style="width:100%;"/>
+            <figcaption><strong><i>Figure 11b</i></strong> : Optimised Hotspot Analysis output attribute table.</figcaption>
+        </figure>
+        
+        <figure>
+        <img src="images/fishnet_optim_results.jpg" alt="Optimised Hotspot Fishnet Polygons Method" style="width:100%;"/>
+            <figcaption><strong><i>Figure 11c</i></strong> : Output for Optimised hotspot analysis fishnet method. The red areas represent statistically significant hotposts for accident incidents between 2020-2021.</figcaption>
+        </figure>
+     </section>   
+    
+    <!----------End Data Analysis Section------------->
+    
+    
+    <!----------Results Section------------->
+    <section class="results" id="results">
+      <h1>Results</h1>
+        <p>The results obtained from the analysis are visualised with other data to gain more insight on where accidents occur in Hillsborough County, Florida. This was run in ArcMap software. This will make it possible to give recommendations to stakeholders on where resources can be invested to reduce accident incidents within the county. These results are overlayed with road, bikelanes, municipalities, city and zipcode data <i>(See Data Collection)</i>.</p>
+        
+       
+        <p>Several datasets were overlayed with the analysis results and outputs were created in the form of maps and interpreted to answer this study's question - "what areas have high road traffic accident incidents?".
+        <br>This question further led to an interest to check if these zones are near schools, hospitals and bikelanes.</p>
+        
+        <h3>Traffic Accident Hotpsots Analysis Results</h3>
+        <p>Traffic accident hotspots in Hillsborough County(Figure 12a and 12b) had high values (hotspots) of clustering with a confidence level of 99% are indicated as red points/areas.</p>
+        
+         <figure>
+        <img src="images/Traffic_Optimised_Hotspot_Analysis.jpg" alt="Attribute table for Traffic_Accident _Optimised_Hotspot" style="width:100%;"/>
+            <figcaption><strong><i>Figure 12a</i></strong> : Traffic Accident Hotspots analysis (2020-2021) results using the Analysis field Optimised Hot spot analysis method. </figcaption>
+        </figure>
+        
+        <figure>
+        <img src="images/Traffic_Optimised_Hotspot_Analysis_fishnet.jpg" alt="Optimised Hotspot Fishnet Polygons Method" style="width:100%;"/>
+            <figcaption><strong><i>Figure 12b</i></strong> : Traffic Accident Hotspots map created from the optimised hot spot analysis incident data aggregation method (fishnet polygons aggregation method). The red areas represent statistically significant hotposts for accident incidents that happened between 2020-2021.</figcaption>
+        </figure>
+        
+    <h3>Findings from the Hotspot Analysis</h3>    
+    <p>The analysis results with the Gi_Bin point outputs was further analysed to extract more information on the location of these traffic accident hotspots. The streets field from "Traffic_Accidents.shp" was joined to the output of the analysis to locate the streets with these hotspots. 902 hotspots were identified, then selected and a new layer was created from this selection. These hotspots selected have a confidence level of 99%.</p>     
+        
+        <figure>
+        <img src="images/Table_hotspots.jpg" alt="Attribute table of Hotspots" style="width:100%;"/>
+            <figcaption><strong><i>Figure 13a</i></strong> : Hillsboorough County Traffic Accident Hotspots attribute table.</figcaption>
+        </figure>
+        
+        <figure>
+        <img src="images/Map_hotspots.jpg" alt="Traffic Accident Hotspots" style="width:100%;"/>
+            <figcaption><strong><i>Figure 13b</i></strong> : Hillsboorough County Traffic Accident Hotspots.</figcaption>
+        </figure>
+        
+       <p>The data further shows that U.S. 301 Highway S (301 HW S) is were majority of the hotspots (153)(Figure 14a) are found. It has approximately 18 intersections where accidents hotspots are located making it a problematic route. Zipcodes (Figure14b)where hotspots are located were also identified and the Riverview zipcode - 33578 had the highest traffic accident hotspots (206 hotpsots).</p>
+        
+        <figure>
+        <img src="images/301_Highway.jpg" alt="301 HW S Hotspots" style="width:100%;"/>
+            <figcaption><strong><i>Figure 14b</i></strong> : Hillsborough County Traffic Accident Hotspots on US 301 HW S, making it the street with the most hotspots.</figcaption>
+        </figure>
+        
+        <figure>
+        <img src="images/Zip_map_table.jpg" alt="Zipcode table and map" style="width:100%;"/>
+            <figcaption><strong><i>Figure 14b</i></strong> : Zipcodes where Hillsborough County Traffic Accident Hotspots are located.</figcaption>
+        </figure>
+        
+        </section>
+        
+        
+        <section>
+            <h1>Analysis with ArcGIS Online</h1>
+         <p>More analysis was done using ArcGIS Online. The shapefiles for traffic accident incidents and zipcodes were all converted into KML formats (Figure 15a) in order to be used in ArcGIS Online.</p>
+            
+        <figure>
+        <img src="images/KML%20layers.jpg" alt="" style="width:100%;"/>
+            <figcaption><strong><i>Figure 15a</i></strong> : KML data layers and Map used for further analysis in this project.</figcaption>  
+            </figure>
+            
+        <p>Various data were added after creating a folder for the project. This was followed by the creation of a map named <span class="bold">Traffic Accident Hotspots in Hillsborough County.</span>To change the symbology of the data and enabling editting the KML data files where converted to shapefiles.</p> 
+        
+            <figure>
+        <img src="images/arcgis_online_map1.jpg" alt="ArcGIS Online Project Map" style="width:100%;"/>
+            <figcaption><strong><i>Figure 15b</i></strong> : Traffic Accident Map created in ArcGIS online for Hotspot Analysis.</figcaption>
+            </figure>   
+            
+            
+        <p>With the ArcGIS Online sharing function, it is possible to embedd and share the link to this - Traffic Accident Hotspots in Hillsborough County Map (Figure 15c) on any webpage. Public access for editting, reviewing and contributing to the project ws enable.</p>
+            
+            <div class="embed-container">
+                <iframe src="//www.arcgis.com/apps/Embed/index.html?webmap=6562de73519f47a3a82d4077ed0b7865&extent=-83.0422,27.5183,-81.7678,28.2466&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&details=true&legendlayers=true&active_panel=details&disable_scroll=true&theme=dark" title="Traffic Accidents Hotspot Analysis in Hillsborough County" width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><figure><figcaption>ArcGIS Online Traffic Accident Hotspots in Hillsborough County Map project.</figcaption></figure>
+                </div>       
+            
+                
+            <p>After the data was added hotspot analysis had to be done, unfortunately because a public ArcGIS Online account was used analysis was only limitied to finding clusters in the data. Before performing the clustering analysis, the symbology of the "Traffic Accident" layer was changed make to symbolise number of accidents per location. This was done using the <span class ="bold"><i>"Accident_Count"</i></span> attribute field.
+        <br>Cluster Analysis was run on the Traffic Aciident layer and major clusters were identified. The clusters were put into 5 categories. The largest traffic accident cluster represented <span class ="bold">168 features (Figure 15c)</span> and, this is found in Tampa Zip_code 33634. Since the traffic accident data was overlayed on the zipcode layer, it was possible to know clustering information for each zipcode. This was possible due to information pop-up box (Figure 15c) which displays data associated to the selected feature in a layer. This pop-up is configured for each layer.</p>
+          
+                
+            <figure>
+        <img src="images/cluster%20results1.jpg" alt="ArcGIS Online Cluster Analysis on Traffic Accident layer results" style="width:100%;"/>
+            <figcaption><strong><i>Figure 15b</i></strong> : Traffic Accident Map results after performing clustering analysis.</figcaption>  
+            </figure>
+            
+                  <figure>
+        <img src="images/cluster%20info..jpg" alt="ArcGIS Online Cluster Analysis on Traffic Accident layer results with information pop-up tag" style="width:100%;"/>
+            <img src="images/cluster%20info1..jpg" alt="ArcGIS Online Cluster Analysis on Traffic Accident layer results with information pop-up tag" style="width:100%;"/>
+            <figcaption><strong><i>Figure 15b</i></strong> : Traffic Accident Map showing information tag on selected cluster.</figcaption>  
+            </figure>
+               
+    <!----------End Results Section------------->       
+        </section>
+        
+    <footer>
+        <div class="footer-content">
+            <h4>GGE 3423 Project - Analysis of Road Traffic Accidents</h4>
+            <p><i>by Gemmie Wesley Motuba Ma Enow <br>(GGE 3423 - Introduction to GIS Project &copy;2022)</i></p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
